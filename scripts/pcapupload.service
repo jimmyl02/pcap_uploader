@@ -1,0 +1,15 @@
+[Unit]
+Description=Upload pcaps for storage from logrotate
+Requires=networkdump.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/home/jimmy/network-monitoring
+ExecStart=/home/jimmy/network-monitoring/pcap_uploader
+
+[Install]
+WantedBy=multi-user.target

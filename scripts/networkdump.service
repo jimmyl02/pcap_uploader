@@ -1,0 +1,15 @@
+[Unit]
+Description=Dump all network traffic
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/home/jimmy/network-monitoring
+ExecStart=/home/jimmy/network-monitoring/dump.sh
+
+[Install]
+WantedBy=multi-user.target
